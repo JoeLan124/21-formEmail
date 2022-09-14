@@ -1,7 +1,8 @@
-import nodemailer from "nodemailer";
+//import nodemailer from "nodemailer";
 import sendEmail from "lib/email.js";
 
 export default async function handler(req, res) {
+  let nodemailer = require("nodemailer");
   if (req.method !== "POST") {
     return res.status(501).end();
   }
