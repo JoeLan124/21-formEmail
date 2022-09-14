@@ -36,9 +36,8 @@ export default async function handler(req, res) {
       sender: "Gruppenpostfach - do not answer",
       to: "johannes.langosch@googlmail.com",
       subject: `Beantragung Berechtigung für ${req.body.surname} ${req.body.pnr}`,
-      text: Hallo,
-      // html: `<div>${req.body.firstname};${req.body.surname};${req.body.pnr};${req.body.email};${req.body.description};
-      // ${req.body.orga};${req.body.telefon};${req.body.surnameV};${req.body.pnrV}</div>`,
+      html: `<div>${req.body.firstname};${req.body.surname};${req.body.pnr};${req.body.email};${req.body.description};
+       ${req.body.orga};${req.body.telefon};${req.body.surnameV};${req.body.pnrV}</div>`,
     };
 
     await new Promise((resolve, reject) => {
