@@ -43,6 +43,20 @@ export default async function handler(req, res) {
       },
       secure: true,
     });
+
+    await new Promise((resolve, reject) => {
+      // verify connection configuration
+      transporter.verify(function (error, success) {
+        if (error) {
+          console.log(error);
+          reject(error);
+        } else {
+          console.log("Server is ready to take our messages");
+          resolve(success);
+        }
+      });
+    });
+
     const mailData = {
       from: process.env.EMAIL_FROM,
       sender: "Gruppenpostfach - do not answer",
@@ -51,10 +65,20 @@ export default async function handler(req, res) {
       html: `<div>${req.body.firstname};${req.body.surname};${req.body.pnr};${req.body.email};${req.body.description};
       ${req.body.orga};${req.body.telefon};${req.body.surnameV};${req.body.pnrV}</div>`,
     };
-    transporter.sendMail(mailData, function (err, info) {
-      if (err) console.log(err);
-      else console.log(info);
+
+    await new Promise((resolve, reject) => {
+      // send mail
+      transporter.sendMail(mailData, (err, info) => {
+        if (err) {
+          console.error(err);
+          reject(err);
+        } else {
+          console.log(info);
+          resolve(info);
+        }
+      });
     });
+
     res.status(200);
     res.end();
   }
