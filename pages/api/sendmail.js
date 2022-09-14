@@ -1,33 +1,6 @@
 import nodemailer from "nodemailer";
 import sendEmail from "lib/email.js";
 
-// export default async function handler(req, res) {
-//   const transporter = nodemailer.createTransport(process.env.EMAIL_SERVER);
-
-//   transporter.sendMail(
-//     {
-//       from: process.env.EMAIL_FROM,
-//       to: to,
-//       subject: subject,
-//       html: body,
-//     },
-//     function (err, info) {
-//       if (err) {
-//         console.log(err);
-//       } else {
-//         ok;
-//         sendEmail(
-//           "johannes.langosch@nexgo.de",
-//           "New booking",
-//           `${req.body.firstname} ${req.body.surname} `
-//         );
-//       }
-//     }
-//   );
-
-//   res.end();
-// }
-
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(501).end();
@@ -41,7 +14,7 @@ export default async function handler(req, res) {
         user: process.env.EMAIL_SERVER_USER,
         pass: process.env.EMAIL_SERVER_PASSWORD,
       },
-      secure: true,
+      // secure: true,
     });
 
     await new Promise((resolve, reject) => {
