@@ -46,7 +46,7 @@ export default async function handler(req, res) {
     const mailData = {
       from: process.env.EMAIL_FROM,
       sender: "Gruppenpostfach - do not answer",
-      to: "carsten.bernd.schwenke@ergo.de",
+      to: "johannes.langosch@googlmail.com",
       subject: `Beantragung Berechtigung für ${req.body.surname} ${req.body.pnr}`,
       html: `<div>${req.body.firstname};${req.body.surname};${req.body.pnr};${req.body.email};${req.body.description};
       ${req.body.orga};${req.body.telefon};${req.body.surnameV};${req.body.pnrV}</div>`,
