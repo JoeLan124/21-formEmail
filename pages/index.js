@@ -51,9 +51,6 @@ export default function Home() {
                 telefon,
                 surnameV,
                 pnrV,
-                typenew,
-                typedelete,
-                typeupdate,
               }),
               headers: {
                 "Content-Type": "application/json",
