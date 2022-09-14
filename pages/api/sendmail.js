@@ -15,7 +15,7 @@ export default async function handler(req, res) {
         user: process.env.EMAIL_SERVER_USER,
         pass: process.env.EMAIL_SERVER_PASSWORD,
       },
-      // secure: true,
+      secure: true,
     });
 
     await new Promise((resolve, reject) => {
