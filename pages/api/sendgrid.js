@@ -1,8 +1,8 @@
 import sendgrid from "@sendgrid/mail";
-
-sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
+import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(req, res) {
+  sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
   if (req.method !== "POST") {
     return res.status(501).end();
   }
