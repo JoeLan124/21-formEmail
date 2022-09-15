@@ -40,7 +40,7 @@ export default function Home() {
           className="mt-4 "
           onSubmit={async (e) => {
             e.preventDefault();
-            await fetch("/api/sendmail", {
+            await fetch("/api/sendgrid", {
               body: JSON.stringify({
                 firstname,
                 surname,
