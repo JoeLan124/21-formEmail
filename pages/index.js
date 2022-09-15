@@ -24,7 +24,7 @@ export default function Home() {
       </Head>
 
       <div className="text-center border-2 border-gray-300 m-4 shadow-xl rounded-xl">
-        <div className="mx-10 mt-10 mx-auto w-1/1 text-left">
+        <div className=" mt-10 mx-auto w-1/1 text-left">
           <h1 className="font-extrabold text-2xl mb-4">
             Beantragung neue Berechtigung
           </h1>
