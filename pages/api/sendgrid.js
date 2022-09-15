@@ -1,4 +1,4 @@
-import sendgrid from "@sendgrid/mail";
+import sendgrid from "sendgrid";
 
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 
